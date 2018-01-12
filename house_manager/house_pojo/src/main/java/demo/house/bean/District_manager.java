@@ -20,8 +20,8 @@ public class District_manager {//区域
 	private Integer districtID;
 	private String district;//区域名称
 	private String status;//状态
-	@DateTimeFormat(pattern="yyyy-MM-dd hh:mm:ss")
-	@JsonFormat(pattern="yyyy-MM-dd hh:mm:ss",locale="GTM+8")
+	@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
+	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
 	private Date dis_time;
 	public Integer getDistrictID() {
 		return districtID;

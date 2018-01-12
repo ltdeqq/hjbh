@@ -7,7 +7,6 @@
     <artifactId>house_manager</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <groupId>demo.house</groupId>
   <artifactId>house_pojo</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>house_pojo</name>

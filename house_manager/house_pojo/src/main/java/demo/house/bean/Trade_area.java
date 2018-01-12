@@ -3,6 +3,9 @@ package demo.house.bean;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -14,6 +17,8 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 @Entity
 @Table(name="trade_area")
 public class Trade_area {//商圈
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer tradeID;
 	private String trade;//商圈名称
 	private String status;

@@ -20,8 +20,8 @@ public class Type_manager {//类型
 	private Integer typeID;
 	private String type;
 	private String status;
-	@DateTimeFormat(pattern="yyyy-MM-dd hh:mm:ss")
-	@JsonFormat(pattern="yyyy-MM-dd hh:mm:ss",locale="GTM+8")
+	@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
+	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
 	private Date type_time;
 	public Integer getTypeID() {
 		return typeID;

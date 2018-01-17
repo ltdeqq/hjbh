@@ -20,8 +20,8 @@ public class Picture {//新房图库
 	private Integer pictureID;
 	private String picture;
 	private String status;
-	@DateTimeFormat(pattern="yyyy-MM-dd hh:mm:ss")
-	@JsonFormat(pattern="yyyy-MM-dd hh:mm:ss",locale="GTM+8")
+	@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
+	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
 	private Date pic_time;
 	public Integer getPictureID() {
 		return pictureID;

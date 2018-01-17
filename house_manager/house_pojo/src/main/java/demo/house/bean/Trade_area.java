@@ -22,8 +22,8 @@ public class Trade_area {//商圈
 	private Integer tradeID;
 	private String trade;//商圈名称
 	private String status;
-	@DateTimeFormat(pattern="yyyy-MM-dd hh:mm:ss")
-	@JsonFormat(pattern="yyyy-MM-dd hh:mm:ss",locale="GTM+8")
+	@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
+	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
 	private Date tra_time;
 	
 	private Integer districtID;//外键

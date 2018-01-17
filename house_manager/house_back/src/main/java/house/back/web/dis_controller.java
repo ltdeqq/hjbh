@@ -36,7 +36,7 @@ public class dis_controller {
 	   ModelAndView mv=new ModelAndView();
 	   tra_service.delete(id);
 	   dis_service.delete(id);
-	    mv.setViewName("redirect:/back/tables.html");
+	    mv.setViewName("redirect:/back/district.html");
 	    return mv;
    }
    @RequestMapping(value="/add")//添加区域
@@ -49,7 +49,7 @@ public class dis_controller {
 	   System.out.println(new Date());
 	   dis.setStatus("y");
 	   dis_service.add(dis);
-	    mv.setViewName("redirect:/back/tables.html");
+	    mv.setViewName("redirect:/back/district.html");
 	    return mv;
    }
    @RequestMapping(value="/toupdate_dis")//准备修改区域
@@ -57,5 +57,11 @@ public class dis_controller {
    public District_manager toupdate_dis(@RequestParam(name="districtID") Integer districtID){
 	  return dis_service.load(districtID);
    }
-  
+   @RequestMapping(value="/update_dis")//修改区域
+   public ModelAndView update_dis(@RequestParam(name="districtID") Integer districtID,@RequestParam(name="dis_status") String status,@RequestParam(name="districtname") String district){
+	   ModelAndView mv=new ModelAndView();
+	   dis_service.update(district, status, new Date(), districtID);
+	    mv.setViewName("redirect:/back/district.html");
+	    return mv;
+   }
 }

@@ -26,12 +26,12 @@ public class House_information {//房源信息展示
 	private Date open_time;//开盘时间
 	private String open_picture;
 	private String address;
-	@DateTimeFormat(pattern="yyyy-MM-dd hh:mm:ss")
-	@JsonFormat(pattern="yyyy-MM-dd hh:mm:ss",locale="GTM+8")
+	@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
+	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
 	private Date launch_time;//交房时间
 	private String status;
-	@DateTimeFormat(pattern="yyyy-MM-dd hh:mm:ss")
-	@JsonFormat(pattern="yyyy-MM-dd hh:mm:ss",locale="GTM+8")
+	@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
+	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
 	private Date time;//发布时间
 	private String name;//姓名
 	private String tel;//联系电话

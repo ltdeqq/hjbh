@@ -20,8 +20,8 @@ public class Decorate_manager {//装修
 	private Integer decorateID;
 	private String decorate;
 	private String status;
-	@DateTimeFormat(pattern="yyyy-MM-dd hh:mm:ss")
-	@JsonFormat(pattern="yyyy-MM-dd hh:mm:ss",locale="GTM+8")
+	@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
+	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
 	private Date dec_time;
 	public Integer getDecorateID() {
 		return decorateID;

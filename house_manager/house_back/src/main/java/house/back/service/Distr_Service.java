@@ -23,7 +23,7 @@ public class Distr_Service{
    public void delete(Integer id){
 	   dis.delete(id);
    }
-  public void update(String district,String status,Date dis_time,Integer districtID) {
+  public void update(String district,String status,java.util.Date dis_time,Integer districtID) {
 	  dis.update(district, status, dis_time, districtID);
 	  
   }

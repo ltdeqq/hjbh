@@ -16,3 +16,4 @@ public interface Status_api extends JpaRepository<Status_manager, Integer>{
 	@Query("update Status_manager s set sta_name=:sta_name,status=:status,sta_time=:sta_time where statusID=:statusID")
    public void update(@Param("sta_name") String sta_name,@Param("status") String status,@Param("sta_time") Date sta_time,@Param("statusID") Integer statusID);
 }
+

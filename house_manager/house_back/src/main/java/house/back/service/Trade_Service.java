@@ -4,12 +4,15 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Service;
 
+import demo.house.bean.Consult;
 import demo.house.bean.Trade_area;
 import house.back.dao.Trade_api;
 
-@Service
+@Service("trade_ser")
 public class Trade_Service {
   @Autowired
   private Trade_api tra;
@@ -34,4 +37,10 @@ public class Trade_Service {
   public void update(String trade,String status,Date tra_time,Integer tradeID) {
 	  tra.update(trade, status, tra_time, tradeID);
   }
+  public static void main(String[] args) {
+		ApplicationContext app=new ClassPathXmlApplicationContext("/app-core.xml");
+		Trade_Service ser=(Trade_Service)app.getBean("trade_ser");
+		
+			System.out.println("×ÉÑ¯£º"+ser.findbyid(1));
+}
 }

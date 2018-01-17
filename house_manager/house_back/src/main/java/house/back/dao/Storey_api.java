@@ -16,3 +16,4 @@ public interface Storey_api extends JpaRepository<Storey_manager,Integer>{
 	@Query("update Storey_manager s set storey=:storey,status=:status,sto_time=:sto_time where storeyID=:storeyID")
    public void update(@Param("storey") String storey,@Param("status") String status,@Param("sto_time") Date sto_time,@Param("storeyID") Integer storeyID);
 }
+

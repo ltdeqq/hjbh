@@ -5,9 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import demo.house.bean.Storey_manager;
 import demo.house.bean.Type_manager;
-import house.back.dao.Storey_api;
 import house.back.dao.Type_api;
 
 @Service
@@ -31,3 +29,4 @@ public class Type_Service {
 		  return ty.findOne(id);
 	  }
 }
+

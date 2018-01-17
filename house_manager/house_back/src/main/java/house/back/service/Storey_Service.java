@@ -30,3 +30,4 @@ public class Storey_Service {
 		  return sto.findOne(id);
 	  }
 }
+

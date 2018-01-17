@@ -16,3 +16,5 @@ public interface Decorate_api extends JpaRepository<Decorate_manager, Integer>{
 	@Query("update Decorate_manager s set decorate=:decorate,status=:status,dec_time=:dec_time where decorateID=:decorateID")
    public void update(@Param("decorate") String decorate,@Param("status") String status,@Param("dec_time") Date dec_time,@Param("decorateID") Integer decorateID);
 }
+
+

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-		<meta charset="utf-8" />
-		<title>房源</title>
-		<!-- 地图 -->
+<meta charset="UTF-8">
+<title>修改</title>
+<!-- 地图 -->
 		    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		    <meta http-equiv="Pragma" content="no-cache" >
 		    <meta http-equiv="Cache-Control" content="no-cache" >
@@ -31,6 +31,7 @@
 		<script src="/house_back/back/assets/js/ace-extra.min.js"></script>		
 		<script type="text/javascript" src="/house_back/back/assets/js/jquery-1.8.0.min.js"></script>
 
+<!-- 下拉框 -->
 <script type="text/javascript">
 $(function(){
 	$.post('/house_back/distr.sw',{},function(data){
@@ -92,9 +93,63 @@ function tra(){
 }
 
 </script>
-	</head>
-	<body>
-		<div class="navbar navbar-default" id="navbar">
+
+<script type="text/javascript">
+//获取url地址
+(function($){
+	$.getUrlParam=function(name){
+		var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+		var r = window.location.search.substr(1).match(reg);
+		if(r!=null)return  unescape(r[2]); return null;		
+	}
+})(jQuery);
+$(function(){
+	 var a =$.getUrlParam("id");//得到修改id值
+	 if(a!=null){
+			$.ajax({
+				type:'post',
+				url:'/house_back/house_toupdate.sw',
+				data:{
+					informationID:a
+				},
+				success:function(data){
+		            $('#select_dis').val(data.districtID);
+					$('#select_tra').val(data.tradeID);
+					$("#select_sta").val(data.statusID);    
+					$("#select_sto").val(data.storeyID);
+					$("#select_type").val(data.typeID);
+					$("#select_dec").val(data.decorateID);
+					
+					$('input[name="informationID"]').val(data.informationID);
+					$('input[name="house_name"]').val(data.house_name);
+					$('input[name="money"]').val(data.money);
+					$('input[name="open_time"]').val(data.open_time);
+					$('input[name="launch_time"]').val(data.launch_time);
+					$('input[name="address"]').val(data.address);
+					$('input[name="tel"]').val(data.tel);
+					$('input[name="open_picture"]').val(data.open_picture);
+					$('input[name="house_area"]').val(data.house_area);
+					$('input[name="developer"]').val(data.developer);
+					$('input[name="floor_space"]').val(data.floor_space);
+					$('input[name="licence"]').val(data.licence);
+					$('input[name="covered_area"]').val(data.covered_area);
+					$('input[name="plot_ratio"]').val(data.plot_ratio);
+					$('input[name="green_rate"]').val(data.green_rate);
+					$('input[name="property_company"]').val(data.property_company);
+					$('input[name="property_rate"]').val(data.property_rate);
+					$('input[name="carport"]').val(data.carport);
+					$('input[name="special_Offers"]').val(data.special_Offers);
+					$('input[name="peripheral_support"]').val(data.peripheral_support);							 
+				}
+				
+});
+	 }
+	//console.log("url地址："+a);
+});
+</script>
+</head>
+<body>
+<div class="navbar navbar-default" id="navbar">
 			<script type="text/javascript">
 				try{ace.settings.check('navbar' , 'fixed')}catch(e){}
 			</script>
@@ -753,7 +808,8 @@ function tra(){
 										</div>
 <!-- ******************************************************************************************* -->
 										<div class="table-responsive">
-										<form action="/house_back/house_add.sw" method="post">
+										<form action="/house_back/house_update.sw" method="post">
+											<input type="hidden" name="informationID">
 											楼盘名称：<input type="text" name="house_name" /><br/>
 											区	域：<select name="districtID" id="select_dis" onclick="tra()"></select> &nbsp;&nbsp;
 											商圈：<select name="tradeID" id="select_tra"></select><br/>											

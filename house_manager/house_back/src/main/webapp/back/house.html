@@ -38,57 +38,12 @@
 				'<td>'+v.time+'</td>';
 				
 				var cz='<td>'+
-				'<div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">'+
-				'<a class="blue" href="#">'+
-				'<i class="icon-zoom-in bigger-130"></i>'+
-				'</a>'+
-				'<a class="green" href="#">'+
-				'<i class="icon-pencil bigger-130"></i>'+
-				'</a>'+
-				'<a class="red" href="#">'+
-					'<i class="icon-trash bigger-130"></i>'+
-				'</a>'+
-			'</div>'+
-			'<div class="visible-xs visible-sm hidden-md hidden-lg">'+
-				'<div class="inline position-relative">'+
-					'<button class="btn btn-minier btn-yellow dropdown-toggle" data-toggle="dropdown">'+
-						'<i class="icon-caret-down icon-only bigger-120"></i>'+
-					'</button>'+
-					'<ul class="dropdown-menu dropdown-only-icon dropdown-yellow pull-right dropdown-caret dropdown-close">'+
-						'<li>'+
-							'<a href="#" class="tooltip-info" data-rel="tooltip" title="View">'+
-								'<span class="blue">'+
-									'<i class="icon-zoom-in bigger-120"></i>'+
-								'</span>'+
-							'</a>'+
-						'</li>'+
-						'<li>'+
-							'<a href="#" class="tooltip-success" data-rel="tooltip" title="Edit">'+
-								'<span class="green">'+
-									'<i class="icon-edit bigger-120"></i>'+
-								'</span>'+
-							'</a>'+
-						'</li>'+
-						'<li>'+
-							'<a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">'+
-								'<span class="red">'+
-									'<i class="icon-trash bigger-120"></i>'+
-								'</span>'+
-							'</a>	</li>	</ul>	</div>	</div>	</td>';
+						'<a href="/house_back/back/house_update.html?id='+v.informationID+'">修改</a>'+
+						'&nbsp;&nbsp;&nbsp;&nbsp;<a href="/house_back/house_delete.sw?informationID='+v.informationID+'">删除</a>'+
+						'</td>';
 				 	 $('<tr></tr>').append(house)
 				 	 .append( cz  )
-				 	 .appendTo('#houseall');
-				 	   /* .append( $('<td></td>').html('<label><input type="checkbox" class="ace" /><span class="lbl"></span></label>') )
-				 	   .append( $('<td></td>').html('<a href="#">'+v.house_name+'</a>')  )
-				 	   .append( $('<td></td>').html(v.money)  )
-				 	   .append( $('<td></td>').html(v.open_time)  )
-				 	   .append( $('<td></td>').html(v.launch_time)  )
-				 	   .append( $('<td class="hidden-480"></td>').html('<span class="label label-sm label-warning">'+v.status == 'y' ? '启用':'禁用'+'</span>')  )
-				 	   .append( $('<td></td>').html(v.time)  )
-				 	   .append( $('<td></td>').html('操作')  )
-				 	   .appendTo('#houseall')
-				 	   ;  */
-				 	   
+				 	 .appendTo('#houseall');				 	   
 			 });
 
 		});
